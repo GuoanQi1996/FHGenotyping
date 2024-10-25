@@ -1,1 +1,2 @@
-# FHGenotyping
+# FHG: Functional haplotype (FH) genotyping 
+
