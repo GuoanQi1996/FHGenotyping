@@ -1,0 +1,2 @@
+splice_region_variant&synonymous_variant
+synonymous_variant
