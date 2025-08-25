@@ -53,4 +53,15 @@ After installing the required runtime environment and preparing the required fil
 ```bash
 Rscript FHG.R --tfile test.traw --ann Variants_annotation.txt --mis Non_synonymous_annotation.txt --syn Synonymous_annotation.txt --out Test
 ```
+## Extension
 As you may awared, this genotyping strategy can be easily extended to any genomic regions of interests, by providing proper annotation files to the software. For example, if we focus on the genomic regions located in the upsteam 2K bp region, we can annotate these variants to like `regulatory region variant` in file provided to parameter `--ann` and define the `regulatory region variant` as coding object in file provided to parameter `--mis`. However, it is clear that if the coding object has more markers, the sparsity of the generated FH in the population will be further increased, which usually means that a larger population is needed to ensure the polymorphism of FH markers. 
+## Acknowledgement
+I sincerely thank the following researcher(s) for their feedback on FHGenotyping to improve the robustness of software.  
+Qiqian Cui [@sapiens213](https://github.com/sapiens213)
+
+## Citation
+Please cite the following publication if you use FHGenotyping and FH for genetic analysis.
+```
+Qi, G., Li, Y., Zhang, W. et al. Reveal genomic insights into cotton domestication and improvement using gene level functional haplotype-based GWAS. Nat Commun 16, 4734 (2025). https://doi.org/10.1038/s41467-025-59983-w
+```
+
