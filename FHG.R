@@ -378,6 +378,7 @@ if(length(rmIndex)>0){
 
 cat(paste0(nrow(GT[which(!is.na(match(GT$Type,misTy$V1))),])," missense variants in ", length(unique(GT$Gene[which(!is.na(match(GT$Type,misTy$V1)))]))," genes remain for FH genotyping.\n"))
 geneList = unique(GT$Gene)
+N = ncol(GT)-5
 hapNumber = c()
 EH = c()
 KA = c()
@@ -422,18 +423,16 @@ for(i in 1:length(geneList)){
     summaryDT2 = rbind(summaryDT2,hapSum)
     
     # EH
-    N = ncol(dt)-5
     p = hapmap/N
     eh = sum(p*log(p))*(-1)/log(N)
     EH = c(EH, eh)
   } else {
-    summaryDT1 = rbind(summaryDT1,1)
+    summaryDT1 = rbind(summaryDT1,rep(1,N))
     hapNumber = c(hapNumber, 0)
     EH = c(EH, 0)
   }
   
   # Ka Ks
-  N = ncol(dt)-5
   missen_index = which(!is.na(match(dt$Type,misTy$V1)))
   synon_index = which(!is.na(match(dt$Type,synTy$V1)))
   if(length(missen_index)==0){
